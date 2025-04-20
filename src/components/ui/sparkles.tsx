@@ -63,7 +63,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                         enable: true,
                         mode: "repulse",
                     },
-                    resize: true as any,
+                    resize: true as unknown,
                 },
                 modes: {
                     push: {
@@ -419,7 +419,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                 <Particles
                     id={id || "tsparticles"}
                     className={cn("h-full w-full")}
-                    options={options as any}
+                    options={options as unknown}
                 />
             )}
         </motion.div>
