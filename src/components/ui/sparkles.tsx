@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import type { SingleOrMultiple } from "@tsparticles/engine";
+import type { IOptions, RecursivePartial, SingleOrMultiple } from "@tsparticles/engine";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { motion, useAnimation } from "motion/react";
@@ -63,7 +63,9 @@ export const SparklesCore = (props: ParticlesProps) => {
                         enable: true,
                         mode: "repulse",
                     },
-                    resize: true as unknown,
+                    resize: {
+                        enable: true,
+                    },
                 },
                 modes: {
                     push: {
@@ -419,7 +421,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                 <Particles
                     id={id || "tsparticles"}
                     className={cn("h-full w-full")}
-                    options={options as unknown}
+                    options={options as RecursivePartial<IOptions>}
                 />
             )}
         </motion.div>
